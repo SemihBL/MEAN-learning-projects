@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/Scripts/jquery-3.5.1.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        body {
+            font-size: 1.8rem
+        }
+
+        #wrapper {
+            position: relative;
+            width: 30%;
+            margin: 0 auto
+        }
+
+        input {
+            padding: 15px;
+            font-size: 25px;
+            border-radius: 20px;
+            border: 1px solid grey;
+            outline: none;
+        }
+
+        label {
+            display: inline-block;
+            width: 200px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        button {
+            position: relative;
+            margin-top: 10px;
+            padding: 15px 50px;
+            background-color: #4CAF50;
+            color: #fff;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        #error {
+            color: red;
+            text-align: left;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div id="error">
+
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" placeholder="E-mail">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" id="phone" placeholder="Phone">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password">
+        </div>
+
+        <div class="form-group">
+            <label for="repassword">Re-password</label>
+            <input type="password" name="repassword" id="repassword" placeholder="Re-password">
+        </div>
+
+        <button type="submit" id="btn">Kaydet</button>
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+
+            function isEmail(email) {
+                var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return pattern.test(email);
+            }
+
+            $('#btn').click(function () {
+                var errorMessage = ''
+                $('#error').html('');
+
+                if (($('#email').val() == '') && (isEmail($('#email').val()) == false))
+                    errorMessage += '<p>You required to fill Email.</p>';
+                else if (isEmail($('#email').val()) == false) {
+                    errorMessage += '<p>Please enter a valid email.</p>';
+                }
+
+                if (($('#phone').val() == '') && ($.isNumeric($('#phone').val())==false))
+                    errorMessage += '<p>You required to fill Phone.</p>';
+                else if ($.isNumeric($('#phone').val())==false) {
+                    errorMessage += '<p>Please enter a valid phone number.</p>';
+                }
+
+                if ($('#password').val() == '')
+                    errorMessage += '<p>You required to fill Password.</p>';
+
+                if ($('#repassword').val() != $('#password').val())
+                    errorMessage += '<p>Passwords are not matching.</p>';
+
+                if (errorMessage != '') {
+                    $('#error').html(errorMessage);
+                }
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

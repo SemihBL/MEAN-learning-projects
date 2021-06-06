@@ -1,0 +1,91 @@
+Math.PI() (PI sayısı)
+
+Math.Round() (en yakın sayıya yuvarlar)
+
+Math.Floor() (herzaman aşağıdaki ki sayıya yuvarlar)
+
+Math.Ceil() (herzaman yukarıda ki sayıya yuvarlar)
+
+Math.sqrt() (karekök alır)
+
+Math.pow(2,4) (2 üzeri 4 alır)
+
+Math.abs() (mutlak değere alır)
+
+Math.min(2,5,3,6,8) (dizi içerisindeki en küçük sayıyı alır)
+
+Math.max(2,5,3,6,8) (dizi içerisindeki en büyük sayıyı alır)
+
+Math.Random()*100 (0 ile 100 arasında rastgele sayı üretir)
+
+**********
+
+**
+
+toPrecision(2) (15.5245 = 15 yapar)
+toFixed(2) (15.5245 = 15.52 yapar)
+
+**
+
+trim() (baştaki ve sondaki boşlukları siler)
+indexOf('a') (string ifade içerisinde "a" arar)
+
+**
+
+substr, substring, slice benzerlerdir.
+
+**
+
+.split(',') (virgül olan yerleri ayırır)
+
+**
+
+.splice(0,5) (dizide 0'dan 5'e kadar eleman siler)
+.splice(0,5,'ss') (dizide 0'dan 5'e kadar eleman silip ss ekler)
+
+**
+
+indexOf(), includes() (İçeride arama yapar)
+
+**
+
+.push(), .unshift() (Sona ekler, başa ekler)
+.pop(), .shift() (Sondan siler, baştan siler)
+
+**
+
+years.concat(names) (years ve names dizilerini birleştirir)
+
+**
+
+.reverse() (diziyi tersine çevirir)
+
+**
+
+.sort() (alfabetik veya değer büyüklüğüne göre sıralar)
+
+****
+
+.find() (ilk uygun değeri getirir)
+.filter() (uygun olan tüm değerleri getirir)
+
+let currentDate = new Date;
+let currentYear = currentDate.getFullYear();
+
+function over18(year) {
+    let age = (currentYear - year);
+    return age >= 18;
+}
+
+// let value = years.find(over18);
+let value = years.filter(over18);
+console.log(value);
+
+****
+map : returns an array
+
+// let val = people.map(function (item) {
+//     return item.firstName + ' ' + item.lastName;
+// });
+
+// console.log(val);

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        label {
+            display: inline-block;
+            width: 50px;
+            font: 1em sans-serif;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+
+        #myBtn {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 30px;
+            width: 230px;
+            /* margin-top: 10px; */
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Error Handling</h1>
+
+    <form action="#">
+        <div id="errors"
+            style="font-family: sans-serif;color:red; font-weight: bold; text-transform:uppercase; margin-bottom: 10px;">
+        </div>
+        <label for="name">Name</label>
+        <input type="text" id="name"><br>
+
+        <label for="age">Age</label>
+        <input type="text" id="age"><br>
+
+        <input type="submit" id="myBtn" value="Send"><br>
+    </form>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
